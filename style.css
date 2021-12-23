@@ -43,3 +43,17 @@ main {
 .info h3 {
   margin: 0.5rem 0;
 }
+
+.game {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 150px;
+}
+
+.game button {
+  padding: 50px;
+  height: 200px;
+  width: 200px;
+  border: 20px solid #000;
+  border-radius: 100%;
+}
