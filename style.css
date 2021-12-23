@@ -45,15 +45,46 @@ main {
 }
 
 .game {
+  background: url("./images/bg-triangle.svg") center no-repeat;
   max-width: 600px;
   margin: 0 auto;
-  padding-top: 150px;
+  padding-top: 10px;
+  text-align: center;
 }
 
 .game button {
   padding: 50px;
   height: 200px;
   width: 200px;
-  border: 20px solid #000;
   border-radius: 100%;
+  margin: 1.5rem;
+  cursor: pointer;
+}
+
+#rock {
+  border: 20px solid #dc2f4f;
+  box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #c32240;
+  transition: all 500ms;
+}
+
+#rock:hover {
+  box-shadow: 0 0 20px 5px #fff;
+}
+
+#paper {
+  border: 20px solid #5671f5;
+  box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #0d2fd9;
+}
+
+#paper:hover {
+  box-shadow: 0 0 20px 5px #fff;
+}
+
+#sciss {
+  border: 20px solid #eca922;
+  box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #d39312;
+}
+
+#sciss:hover {
+  box-shadow: 0 0 20px 5px #fff;
 }
