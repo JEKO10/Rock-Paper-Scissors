@@ -143,3 +143,23 @@ input:checked + .slider {
 input:checked + .slider::before {
   transform: translateX(100%);
 }
+
+#rules {
+  float: right;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 10px 25px;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+#rules:hover {
+  background: #fff;
+  color: #000;
+}
