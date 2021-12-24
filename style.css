@@ -13,7 +13,7 @@ body {
 }
 
 main {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .info {
@@ -48,7 +48,6 @@ main {
   background: url("./images/bg-triangle.svg") center no-repeat;
   max-width: 600px;
   margin: 0 auto;
-  padding-top: 10px;
   text-align: center;
 }
 
@@ -87,4 +86,60 @@ main {
 
 #sciss:hover {
   box-shadow: 0 0 20px 5px #fff;
+}
+
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.switch h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#switch {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  width: 110px;
+  margin: 0 2rem;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: #427bc5;
+  transition: all 400ms ease;
+  border-radius: 50px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  left: 5px;
+  bottom: 5px;
+  background-color: #fff;
+  transition: all 400ms ease;
+  border-radius: 50px;
+}
+
+#switch input {
+  display: none;
+}
+
+input:checked + .slider {
+  background-color: #141539;
+}
+
+input:checked + .slider::before {
+  transform: translateX(100%);
 }
