@@ -26,19 +26,32 @@ exitRules.addEventListener("click", () => {
 });
 
 const symbol = [rock, paper, sciss];
-const random = Math.floor(Math.random() * 3);
-const computer = symbol[random];
 
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    const random = Math.floor(Math.random() * 3);
+    const computer = symbol[random];
     const user = e.target;
     console.log(user);
-    if (user.id === "rock") {
-      console.log("rock");
-    } else if (user.id === "paper") {
-      console.log("paper");
-    } else {
-      console.log("sciss");
+    console.log(computer);
+    if (
+      (computer.id === "rock" && user.id === "rock") ||
+      (computer.id === "paper" && user.id === "paper") ||
+      (computer.id === "sciss" && user.id === "sciss")
+    ) {
+      console.log("Draw!");
+    } else if (
+      (computer.id === "rock" && user.id === "sciss") ||
+      (computer.id === "paper" && user.id === "rock") ||
+      (computer.id === "sciss" && user.id === "paper")
+    ) {
+      console.log("You lost!");
+    } else if (
+      (computer.id === "rock" && user.id === "paper") ||
+      (computer.id === "paper" && user.id === "sciss") ||
+      (computer.id === "sciss" && user.id === "rock")
+    ) {
+      console.log("You won!");
     }
   });
 });
