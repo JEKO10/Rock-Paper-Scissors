@@ -60,6 +60,10 @@ main {
   cursor: pointer;
 }
 
+.game img {
+  pointer-events: none;
+}
+
 #rock {
   border: 20px solid #dc2f4f;
   box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #c32240;
