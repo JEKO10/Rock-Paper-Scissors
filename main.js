@@ -48,6 +48,8 @@ btns.forEach((btn) => {
       (computer.id === "sciss" && user.id === "sciss")
     ) {
       playerStatus.innerHTML = "Draw!";
+      userPicked.classList.remove("winner");
+      housePicked.classList.remove("winner");
     } else if (
       (computer.id === "rock" && user.id === "sciss") ||
       (computer.id === "paper" && user.id === "rock") ||
@@ -55,6 +57,8 @@ btns.forEach((btn) => {
     ) {
       score.innerHTML = scoreNum--;
       playerStatus.innerHTML = "You Lost!";
+      housePicked.classList.add("winner");
+      userPicked.classList.remove("winner");
     } else if (
       (computer.id === "rock" && user.id === "paper") ||
       (computer.id === "paper" && user.id === "sciss") ||
@@ -62,6 +66,8 @@ btns.forEach((btn) => {
     ) {
       score.innerHTML = scoreNum++;
       playerStatus.innerHTML = "You Won!";
+      userPicked.classList.add("winner");
+      housePicked.classList.remove("winner");
     }
     result.style.display = "flex";
     rulesBtn.style.display = "none";
@@ -77,6 +83,16 @@ btns.forEach((btn) => {
     } else if (user.id === "sciss") {
       userImg.src = "./images/icon-scissors.svg";
       userPicked.id = "scissRes";
+    }
+    if (computer.id === "rock") {
+      houseImg.src = "./images/icon-rock.svg";
+      housePicked.id = "rockRes";
+    } else if (computer.id === "paper") {
+      houseImg.src = "./images/icon-paper.svg";
+      housePicked.id = "paperRes";
+    } else if (computer.id === "sciss") {
+      houseImg.src = "./images/icon-scissors.svg";
+      housePicked.id = "scissRes";
     }
   });
 });
