@@ -10,7 +10,12 @@ const rules = document.querySelector(".rules");
 const rulesBtn = document.querySelector("#rulesBtn");
 const exitRules = document.querySelector("#exitRules");
 const result = document.querySelector(".result");
+const playerStatus = document.querySelector("#status");
 const reset = document.querySelector("#reset");
+const userPicked = document.querySelector("#userPicked");
+const userImg = document.querySelector("#userPicked img");
+const houseImg = document.querySelector("#housePicked img");
+const housePicked = document.querySelector("#housePicked");
 
 let scoreNum = 0;
 
@@ -37,36 +42,45 @@ btns.forEach((btn) => {
     const random = Math.floor(Math.random() * 3);
     const computer = symbol[random];
     const user = e.target;
-    console.log(user);
-    console.log(computer);
     if (
       (computer.id === "rock" && user.id === "rock") ||
       (computer.id === "paper" && user.id === "paper") ||
       (computer.id === "sciss" && user.id === "sciss")
     ) {
-      console.log("Draw!");
+      playerStatus.innerHTML = "Draw!";
     } else if (
       (computer.id === "rock" && user.id === "sciss") ||
       (computer.id === "paper" && user.id === "rock") ||
       (computer.id === "sciss" && user.id === "paper")
     ) {
-      console.log("You lost!");
       score.innerHTML = scoreNum--;
+      playerStatus.innerHTML = "You Lost!";
     } else if (
       (computer.id === "rock" && user.id === "paper") ||
       (computer.id === "paper" && user.id === "sciss") ||
       (computer.id === "sciss" && user.id === "rock")
     ) {
-      console.log("You won!");
       score.innerHTML = scoreNum++;
+      playerStatus.innerHTML = "You Won!";
     }
     result.style.display = "flex";
     rulesBtn.style.display = "none";
     switchDiv.style.display = "none";
     game.style.display = "none";
     score.innerHTML = scoreNum;
+    if (user.id === "rock") {
+      userImg.src = "./images/icon-rock.svg";
+      userPicked.id = "rockRes";
+    } else if (user.id === "paper") {
+      userImg.src = "./images/icon-paper.svg";
+      userPicked.id = "paperRes";
+    } else if (user.id === "sciss") {
+      userImg.src = "./images/icon-scissors.svg";
+      userPicked.id = "scissRes";
+    }
   });
 });
+// scissRes
 
 reset.addEventListener("click", () => {
   result.style.display = "none";

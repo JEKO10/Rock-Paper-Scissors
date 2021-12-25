@@ -61,6 +61,10 @@ main {
   cursor: pointer;
 }
 
+.result button:not(#reset) {
+  cursor: default;
+}
+
 .game img {
   pointer-events: none;
 }
