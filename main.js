@@ -1,5 +1,6 @@
 const btns = document.querySelectorAll(".btn");
 const info = document.querySelector(".info");
+const score = document.querySelector("#score");
 const switchDiv = document.querySelector(".switch");
 const game = document.querySelector(".game");
 const rock = document.querySelector("#rock");
@@ -8,6 +9,10 @@ const sciss = document.querySelector("#sciss");
 const rules = document.querySelector(".rules");
 const rulesBtn = document.querySelector("#rulesBtn");
 const exitRules = document.querySelector("#exitRules");
+const result = document.querySelector(".result");
+const reset = document.querySelector("#reset");
+
+let scoreNum = 0;
 
 rulesBtn.addEventListener("click", () => {
   rules.style.display = "block";
@@ -46,12 +51,26 @@ btns.forEach((btn) => {
       (computer.id === "sciss" && user.id === "paper")
     ) {
       console.log("You lost!");
+      score.innerHTML = scoreNum--;
     } else if (
       (computer.id === "rock" && user.id === "paper") ||
       (computer.id === "paper" && user.id === "sciss") ||
       (computer.id === "sciss" && user.id === "rock")
     ) {
       console.log("You won!");
+      score.innerHTML = scoreNum++;
     }
+    result.style.display = "flex";
+    rulesBtn.style.display = "none";
+    switchDiv.style.display = "none";
+    game.style.display = "none";
+    score.innerHTML = scoreNum;
   });
+});
+
+reset.addEventListener("click", () => {
+  result.style.display = "none";
+  rulesBtn.style.display = "block";
+  switchDiv.style.display = "flex";
+  game.style.display = "block";
 });
