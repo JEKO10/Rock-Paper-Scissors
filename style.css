@@ -76,10 +76,6 @@ main {
   transition: all 500ms;
 }
 
-#rock:hover {
-  box-shadow: 0 0 20px 5px #fff;
-}
-
 #rockRes {
   border: 20px solid #dc2f4f;
 }
@@ -87,10 +83,6 @@ main {
 #paper {
   border: 20px solid #5671f5;
   box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #0d2fd9;
-}
-
-#paper:hover {
-  box-shadow: 0 0 20px 5px #fff;
 }
 
 #paperRes {
@@ -102,12 +94,26 @@ main {
   box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #d39312;
 }
 
-#sciss:hover {
-  box-shadow: 0 0 20px 5px #fff;
-}
-
 #scissRes {
   border: 20px solid #eca922;
+}
+
+#lizard {
+  border: 20px solid #8452e3;
+  box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #5a20c5;
+}
+
+#spock {
+  border: 20px solid #4bbbcf;
+  box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #2fa1b5;
+}
+
+#spock:hover,
+#lizard:hover,
+#sciss:hover,
+#paper:hover,
+#rock:hover {
+  box-shadow: 0 0 20px 5px #fff;
 }
 
 .switch {
@@ -167,7 +173,9 @@ input:checked + .slider::before {
 }
 
 #rulesBtn {
-  float: right;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 13px;
   text-transform: uppercase;
@@ -177,7 +185,7 @@ input:checked + .slider::before {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 10px;
-  padding: 10px 25px;
+  padding: 10px 35px;
   margin-right: 1rem;
   cursor: pointer;
   transition: all 500ms ease;
@@ -259,6 +267,29 @@ input:checked + .slider::before {
 
 .result #reset:hover {
   box-shadow: 0 0 20px 5px #fff;
+}
+
+.hard {
+  background: url("./images/bg-pentagon.svg") center no-repeat;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hard button {
+  padding: 50px;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  margin: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hard img {
+  pointer-events: none;
 }
 
 .winner {

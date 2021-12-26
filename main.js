@@ -16,6 +16,10 @@ const userPicked = document.querySelector("#userPicked");
 const userImg = document.querySelector("#userPicked img");
 const houseImg = document.querySelector("#housePicked img");
 const housePicked = document.querySelector("#housePicked");
+const toggleDiv = document.querySelector(".switch");
+const toggle = document.querySelector("#input");
+const logo = document.querySelector("#logo");
+const rulesImg = document.querySelector("#rulesImg");
 
 let scoreNum = 0;
 
@@ -103,4 +107,11 @@ reset.addEventListener("click", () => {
   rulesBtn.style.display = "block";
   switchDiv.style.display = "flex";
   game.style.display = "block";
+});
+
+toggle.addEventListener("click", () => {
+  toggleDiv.classList.toggle("open");
+  game.style.display = "none";
+  logo.src = "./images/logo-bonus.svg";
+  rulesImg.src = "./images/image-rules-bonus.svg";
 });
