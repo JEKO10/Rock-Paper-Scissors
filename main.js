@@ -83,6 +83,7 @@ btns.forEach((btn) => {
     rulesBtn.style.display = "none";
     switchDiv.style.display = "none";
     game.style.display = "none";
+    hard.style.display = "none";
     score.innerHTML = scoreNum;
     if (user.id === "rock") {
       userImg.src = "./images/icon-rock.svg";
@@ -112,13 +113,26 @@ reset.addEventListener("click", () => {
   result.style.display = "none";
   rulesBtn.style.display = "block";
   switchDiv.style.display = "flex";
-  game.style.display = "block";
+  if (toggleDiv.classList.contains("open")) {
+    hard.style.display = "block";
+  } else {
+    game.style.display = "block";
+  }
 });
 
 toggle.addEventListener("click", () => {
   toggleDiv.classList.toggle("open");
-  game.style.display = "none";
-  hard.style.display = "block";
-  logo.src = "./images/logo-bonus.svg";
-  rulesImg.src = "./images/image-rules-bonus.svg";
+  scoreNum = 0;
+  score.innerHTML = scoreNum;
+  if (toggleDiv.classList.contains("open")) {
+    game.style.display = "none";
+    hard.style.display = "block";
+    logo.src = "./images/logo-bonus.svg";
+    rulesImg.src = "./images/image-rules-bonus.svg";
+  } else {
+    game.style.display = "block";
+    hard.style.display = "none";
+    logo.src = "./images/logo.svg";
+    rulesImg.src = "./images/image-rules.svg";
+  }
 });
