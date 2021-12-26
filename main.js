@@ -6,6 +6,8 @@ const game = document.querySelector(".game");
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const sciss = document.querySelector("#sciss");
+const lizard = document.querySelector("#lizard");
+const spock = document.querySelector("#spock");
 const rules = document.querySelector(".rules");
 const rulesBtn = document.querySelector("#rulesBtn");
 const exitRules = document.querySelector("#exitRules");
@@ -46,11 +48,18 @@ exitRules.addEventListener("click", () => {
 });
 
 const symbol = [rock, paper, sciss];
+const symbolHard = [rock, paper, sciss, lizard, spock];
 
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    let computer;
     const random = Math.floor(Math.random() * 3);
-    const computer = symbol[random];
+    const randomHard = Math.floor(Math.random() * 5);
+    if (!toggleDiv.classList.contains("open")) {
+      computer = symbol[random];
+    } else {
+      computer = symbolHard[randomHard];
+    }
     const user = e.target;
     if (
       (computer.id === "rock" && user.id === "rock") ||
@@ -58,6 +67,7 @@ btns.forEach((btn) => {
       (computer.id === "sciss" && user.id === "sciss")
     ) {
       playerStatus.innerHTML = "Draw!";
+      reset.style.color = "black";
       userPicked.classList.remove("winner");
       housePicked.classList.remove("winner");
     } else if (
@@ -67,6 +77,7 @@ btns.forEach((btn) => {
     ) {
       score.innerHTML = scoreNum--;
       playerStatus.innerHTML = "You Lost!";
+      reset.style.color = "red";
       housePicked.classList.add("winner");
       userPicked.classList.remove("winner");
     } else if (
@@ -76,6 +87,7 @@ btns.forEach((btn) => {
     ) {
       score.innerHTML = scoreNum++;
       playerStatus.innerHTML = "You Won!";
+      reset.style.color = "green";
       userPicked.classList.add("winner");
       housePicked.classList.remove("winner");
     }
@@ -94,7 +106,14 @@ btns.forEach((btn) => {
     } else if (user.id === "sciss") {
       userImg.src = "./images/icon-scissors.svg";
       userPicked.id = "scissRes";
+    } else if (user.id === "lizard") {
+      userImg.src = "./images/icon-lizard.svg";
+      userPicked.id = "lizardRes";
+    } else if (user.id === "spock") {
+      userImg.src = "./images/icon-spock.svg";
+      userPicked.id = "spockRes";
     }
+
     if (computer.id === "rock") {
       houseImg.src = "./images/icon-rock.svg";
       housePicked.id = "rockRes";
@@ -104,10 +123,15 @@ btns.forEach((btn) => {
     } else if (computer.id === "sciss") {
       houseImg.src = "./images/icon-scissors.svg";
       housePicked.id = "scissRes";
+    } else if (computer.id === "lizard") {
+      houseImg.src = "./images/icon-lizard.svg";
+      housePicked.id = "lizardRes";
+    } else if (computer.id === "spock") {
+      houseImg.src = "./images/icon-spock.svg";
+      housePicked.id = "spockRes";
     }
   });
 });
-// scissRes
 
 reset.addEventListener("click", () => {
   result.style.display = "none";

@@ -103,9 +103,17 @@ main {
   box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #5a20c5;
 }
 
+#lizardRes {
+  border: 20px solid #8452e3;
+}
+
 #spock {
   border: 20px solid #4bbbcf;
   box-shadow: inset 0 8px 0 0 #ccc, 0 7px 0 0 #2fa1b5;
+}
+
+#spockRes {
+  border: 20px solid #4bbbcf;
 }
 
 #spock:hover,
