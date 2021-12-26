@@ -20,6 +20,7 @@ const toggleDiv = document.querySelector(".switch");
 const toggle = document.querySelector("#input");
 const logo = document.querySelector("#logo");
 const rulesImg = document.querySelector("#rulesImg");
+const hard = document.querySelector(".hard");
 
 let scoreNum = 0;
 
@@ -29,14 +30,19 @@ rulesBtn.addEventListener("click", () => {
   info.style.display = "none";
   switchDiv.style.display = "none";
   game.style.display = "none";
+  hard.style.display = "none";
 });
 
 exitRules.addEventListener("click", () => {
   rules.style.display = "none";
   info.style.display = "flex";
   switchDiv.style.display = "flex";
-  game.style.display = "block";
   rulesBtn.style.display = "block";
+  if (toggleDiv.classList.contains("open")) {
+    hard.style.display = "block";
+  } else {
+    game.style.display = "block";
+  }
 });
 
 const symbol = [rock, paper, sciss];
@@ -112,6 +118,7 @@ reset.addEventListener("click", () => {
 toggle.addEventListener("click", () => {
   toggleDiv.classList.toggle("open");
   game.style.display = "none";
+  hard.style.display = "block";
   logo.src = "./images/logo-bonus.svg";
   rulesImg.src = "./images/image-rules-bonus.svg";
 });
