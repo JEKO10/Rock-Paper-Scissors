@@ -52,6 +52,10 @@ main {
   text-align: center;
 }
 
+.result {
+  margin-top: 3rem;
+}
+
 .game button,
 .result button:not(#reset) {
   padding: 50px;
@@ -64,6 +68,10 @@ main {
 
 .result button:not(#reset) {
   cursor: default;
+}
+
+.again {
+  z-index: 1;
 }
 
 .game img {
@@ -336,10 +344,18 @@ input:checked + .slider::before {
     0 0 0 150px hsla(214, 47%, 23%, 60%), 0 0 0 225px hsla(214, 47%, 23%, 40%);
 }
 
+@media screen and (max-width: 705px) {
+  .winner {
+    box-shadow: 0 0 0 25px hsla(214, 47%, 23%, 80%),
+      0 0 0 45px hsla(214, 47%, 23%, 60%), 0 0 0 75px hsla(214, 47%, 23%, 40%);
+  }
+}
+
 @media screen and (max-width: 600px) {
   .info {
     max-width: 450px;
     margin: 0 auto;
+    z-index: 2;
   }
 
   .game {
@@ -377,6 +393,10 @@ input:checked + .slider::before {
     position: static;
     float: right;
     margin: 2rem 1rem;
+  }
+
+  .result {
+    margin-top: 0;
   }
 
   .result div {
@@ -437,6 +457,11 @@ input:checked + .slider::before {
 
   #sciss {
     border: 10px solid #eca922;
+  }
+
+  .again {
+    position: absolute;
+    bottom: 40px;
   }
 }
 
