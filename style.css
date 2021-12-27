@@ -338,6 +338,11 @@ input:checked + .slider::before {
 }
 
 @media screen and (max-width: 600px) {
+  .info {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
   .game {
     width: 400px;
     height: 400px;
@@ -371,6 +376,16 @@ input:checked + .slider::before {
   .game #sciss {
     bottom: 10px;
     left: 120px;
+  }
+
+  #rulesBtn {
+    position: static;
+    float: right;
+    margin: 2rem 1rem;
+    /* max-width: 250px;
+    text-align: center;
+    margin: 3rem auto;
+    display: block; */
   }
 }
 
