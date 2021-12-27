@@ -337,6 +337,43 @@ input:checked + .slider::before {
     0 0 0 150px hsla(214, 47%, 23%, 60%), 0 0 0 225px hsla(214, 47%, 23%, 40%);
 }
 
+@media screen and (max-width: 600px) {
+  .game {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .game button {
+    padding: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  .game #rock {
+    top: 0;
+    left: 0;
+  }
+
+  .game #paper {
+    top: 0;
+    right: 0;
+  }
+
+  .game #sciss {
+    bottom: 10px;
+    left: 120px;
+  }
+}
+
 @keyframes opacity {
   from {
     opacity: 0;
