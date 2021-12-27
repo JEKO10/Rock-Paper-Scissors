@@ -422,6 +422,54 @@ input:checked + .slider::before {
   .result button img {
     height: 40px;
   }
+
+  .hard {
+    margin-top: 2rem;
+    background-size: 85%;
+    width: 300px;
+    height: 300px;
+  }
+
+  .hard button {
+    height: 50px;
+    width: 50px;
+    padding: 30px;
+    margin: 0;
+  }
+
+  .hard button img {
+    height: 30px;
+  }
+
+  .hard #rock {
+    top: 0;
+    left: 110px;
+    border: 10px solid #dc2f4f;
+  }
+
+  .hard #paper {
+    top: 80px;
+    right: 0;
+    border: 10px solid #5671f5;
+  }
+
+  .hard #sciss {
+    bottom: 10px;
+    right: 30px;
+    border: 10px solid #eca922;
+  }
+
+  .hard #lizard {
+    bottom: 10px;
+    left: 30px;
+    border: 10px solid #8452e3;
+  }
+
+  .hard #spock {
+    top: 80px;
+    left: 0;
+    border: 10px solid #4bbbcf;
+  }
 }
 
 @media screen and (max-width: 426px) {
@@ -462,6 +510,10 @@ input:checked + .slider::before {
   .again {
     position: absolute;
     bottom: 40px;
+  }
+
+  .rules img {
+    height: 260px;
   }
 }
 
