@@ -64,7 +64,9 @@ btns.forEach((btn) => {
     if (
       (computer.id === "rock" && user.id === "rock") ||
       (computer.id === "paper" && user.id === "paper") ||
-      (computer.id === "sciss" && user.id === "sciss")
+      (computer.id === "sciss" && user.id === "sciss") ||
+      (computer.id === "lizard" && user.id === "lizard") ||
+      (computer.id === "spock" && user.id === "spock")
     ) {
       playerStatus.innerHTML = "Draw!";
       reset.style.color = "black";
@@ -72,8 +74,15 @@ btns.forEach((btn) => {
       housePicked.classList.remove("winner");
     } else if (
       (computer.id === "rock" && user.id === "sciss") ||
+      (computer.id === "rock" && user.id === "lizard") ||
       (computer.id === "paper" && user.id === "rock") ||
-      (computer.id === "sciss" && user.id === "paper")
+      (computer.id === "paper" && user.id === "spock") ||
+      (computer.id === "sciss" && user.id === "paper") ||
+      (computer.id === "sciss" && user.id === "lizard") ||
+      (computer.id === "lizard" && user.id === "spock") ||
+      (computer.id === "lizard" && user.id === "paper") ||
+      (computer.id === "spock" && user.id === "rock") ||
+      (computer.id === "spock" && user.id === "sciss")
     ) {
       score.innerHTML = scoreNum--;
       playerStatus.innerHTML = "You Lost!";
@@ -82,8 +91,15 @@ btns.forEach((btn) => {
       userPicked.classList.remove("winner");
     } else if (
       (computer.id === "rock" && user.id === "paper") ||
+      (computer.id === "rock" && user.id === "spock") ||
       (computer.id === "paper" && user.id === "sciss") ||
-      (computer.id === "sciss" && user.id === "rock")
+      (computer.id === "paper" && user.id === "lizard") ||
+      (computer.id === "sciss" && user.id === "rock") ||
+      (computer.id === "sciss" && user.id === "spock") ||
+      (computer.id === "lizard" && user.id === "rock") ||
+      (computer.id === "lizard" && user.id === "sciss") ||
+      (computer.id === "spock" && user.id === "lizard") ||
+      (computer.id === "spock" && user.id === "paper")
     ) {
       score.innerHTML = scoreNum++;
       playerStatus.innerHTML = "You Won!";
